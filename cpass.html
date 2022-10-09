@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Password Validation
+    </title>
+</head>
+
+<body>
+    <p>
+        <label>
+   Fill your password here
+  </label>
+        <input type="text" placeholder="password" id="password" />
+        <br/>
+        <br/>
+        <input type="button" value="Validate" onclick="test_password()" />
+        <br/>
+        <br/>
+        <label>
+   Confirmation message
+  </label>
+        <input type="text" id="status" readonly/>
+    </p>
+    <script type="text/javascript">
+        function test_password() {
+            var result;
+            var pass =
+                document.getElementById("password ").value;
+            if (pass.match(/[a-z]/g) && pass.match(
+                    /[A-Z]/g) && pass.match(
+                    /[0-9]/g) && pass.match(
+                    /[^a-zA-Z\d]/g) && pass.length >= 8)
+                result = "TRUE";
+            else {
+                result = "FALSE";
+                document.getElementById("status ").value = result;
+            }
+        }
+    </script>
+</body>
+
+</html>
